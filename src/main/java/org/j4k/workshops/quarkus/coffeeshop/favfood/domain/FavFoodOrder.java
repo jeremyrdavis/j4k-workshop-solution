@@ -1,5 +1,6 @@
-package org.j4k.workshops.quarkus.coffeeshop.domain;
+package org.j4k.workshops.quarkus.coffeeshop.favfood.domain;
 
+import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.Objects;
 import java.util.StringJoiner;
 
 @RegisterForReflection
-public class FavFoodOrder {
+public class FavFoodOrder extends PanacheMongoEntity {
 
     String customerName;
 

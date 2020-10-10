@@ -1,6 +1,5 @@
 package org.j4k.workshops.quarkus.coffeeshop.favfood.domain;
 
-import org.j4k.workshops.quarkus.coffeeshop.domain.FavFoodOrder;
 import org.j4k.workshops.quarkus.coffeeshop.domain.LineItem;
 import org.j4k.workshops.quarkus.coffeeshop.domain.OrderInCommand;
 

@@ -69,6 +69,14 @@
       <artifactId>kafka</artifactId>
       <version>1.15.0-rc2</version>
     </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-mongodb-panache</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-junit5-mockito</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

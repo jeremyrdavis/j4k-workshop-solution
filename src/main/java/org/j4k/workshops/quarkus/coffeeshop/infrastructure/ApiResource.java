@@ -1,9 +1,9 @@
 package org.j4k.workshops.quarkus.coffeeshop.infrastructure;
 
-import org.eclipse.microprofile.rest.client.inject.RestClient;
-import org.j4k.workshops.quarkus.coffeeshop.domain.FavFoodOrder;
+import org.j4k.workshops.quarkus.coffeeshop.favfood.domain.FavFoodOrder;
 import org.j4k.workshops.quarkus.coffeeshop.domain.OrderInCommand;
 import org.j4k.workshops.quarkus.coffeeshop.favfood.domain.FavFoodOrderHandler;
+import org.j4k.workshops.quarkus.coffeeshop.favfood.infrastructure.FavFoodOrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,11 +20,15 @@ public class ApiResource {
     @Inject
     KafkaService kafkaService;
 
+    @Inject
+    FavFoodOrderRepository repository;
+
     @POST
     @Path("/favfood")
     public Response acceptFavFoodOrder(final FavFoodOrder favFoodOrder) {
 
         logger.debug("received {}", favFoodOrder);
+        repository.persist(favFoodOrder);
 
         OrderInCommand orderInCommand = FavFoodOrderHandler.handleOrder(favFoodOrder);
 

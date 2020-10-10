@@ -1,4 +1,4 @@
-package org.j4k.workshops.quarkus.coffeeshop.domain;
+package org.j4k.workshops.quarkus.coffeeshop.favfood.domain;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
