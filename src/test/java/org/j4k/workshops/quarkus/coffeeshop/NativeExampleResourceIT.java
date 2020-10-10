@@ -1,4 +1,4 @@
-package org.acme.resteasy;
+package org.j4k.workshops.quarkus.coffeeshop;
 
 import io.quarkus.test.junit.NativeImageTest;
 
