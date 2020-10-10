@@ -7,6 +7,7 @@ import org.j4k.workshops.quarkus.coffeeshop.domain.OrderInCommand;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 public class FavFoodOrderHandler {
 
@@ -16,6 +17,7 @@ public class FavFoodOrderHandler {
 
     public static OrderInCommand handleOrder(final FavFoodOrder favFoodOrder){
         OrderInCommand orderInCommand = new OrderInCommand();
+        orderInCommand.setId(UUID.randomUUID().toString());
 
         favFoodOrder.getFavFoodLineItems().forEach(favFoodLineItem -> {
             if(beverages.contains(favFoodLineItem.getItem())){

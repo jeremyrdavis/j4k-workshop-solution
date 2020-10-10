@@ -18,8 +18,7 @@ public class ApiResource {
     Logger logger = LoggerFactory.getLogger(ApiResource.class);
 
     @Inject
-    @RestClient
-    RESTService restService;
+    KafkaService kafkaService;
 
     @POST
     @Path("/favfood")
@@ -30,7 +29,7 @@ public class ApiResource {
         OrderInCommand orderInCommand = FavFoodOrderHandler.handleOrder(favFoodOrder);
 
         logger.debug("sending {}", orderInCommand);
-        restService.placeOrders(orderInCommand);
+        kafkaService.placeOrders(orderInCommand);
 
         return Response.accepted(favFoodOrder).build();
     }
